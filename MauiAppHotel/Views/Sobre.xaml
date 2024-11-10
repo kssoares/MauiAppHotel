@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout>
+        <Image Source="hotelcentralpark.jpg"
+               WidthRequest="400"
+               Aspect="AspectFit" />
+
+        <Frame Padding="20">
+            <VerticalStackLayout>
+                <Label Text="Sobre" Style="{StaticResource Key=Headline}"
+                       HorizontalOptions="Start" 
+                       Margin="0,0,0,5" />
+
+                <Label Text="Aplicativo criado para cálculo da reserva e hospedagem no Hotel Central Park."
+                       Margin="0,0,0,180" />
+
+                <Label Text="2024 Central Park Hotel. Desenvolvimento K SA SOARES"
+                       FontAttributes="Italic"
+                       FontSize="10"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,25"/>
+
+                <Button Text="Voltar"  Clicked="Button_Clicked"
+                        TextTransform="Uppercase"
+                        BackgroundColor="SandyBrown" />
+            </VerticalStackLayout>
+        </Frame>
+        
+    </VerticalStackLayout>
+    
+</ContentPage>

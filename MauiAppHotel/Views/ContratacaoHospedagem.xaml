@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+
+        <VerticalStackLayout>
+            <Image Source="hotelcentralpark.jpg"
+                   WidthRequest="400"
+                   Aspect="AspectFit" />
+
+            <Frame Padding="20">
+                <VerticalStackLayout>
+                    <Label Text="Hotel Central Park" Style="{StaticResource Key=Headline}"
+                           Margin="0,0,0,0" />
+
+                    <Label Text="Cálculo da Diária" Style="{StaticResource Key=SubHeadline}"
+                           Margin="0,0,0,35" />
+
+                    <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="2*, *, *">
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Quantidade Adultos:  " />
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="{Binding Value}" 
+                               TextColor="SandyBrown"
+                               BindingContext="{x:Reference stp_adultos}" />
+
+                        <Stepper Grid.Row="0" Grid.Column="2" 
+                                 x:Name="stp_adultos"
+                                 Minimum="0" Maximum="10" Increment="1" />
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Quantidade Crianças:  " />
+
+                        <Label Grid.Row="1" Grid.Column="1"
+                               Text="{Binding Value}"
+                               TextColor="SandyBrown"
+                               BindingContext="{x:Reference stp_criancas}" />
+
+                        <Stepper Grid.Row="1" Grid.Column="2"
+                                 x:Name="stp_criancas"
+                                 Minimum="0" Maximum="10" Increment="1" />
+                    </Grid>
+
+                    <Frame Style="{StaticResource Key=FrameLine}"
+                           Margin="0,15,0,15">
+                    </Frame>
+
+                    <VerticalStackLayout>
+                        <Label Text="Escolha sua Suíte"
+                               TextTransform="Uppercase"
+                               FontAttributes="Bold" />
+
+                        <Picker x:Name="pck_quarto" Title="Selecione sua Acomodação"
+                                HorizontalOptions="FillAndExpand"
+                                ItemDisplayBinding="{Binding Descricao}"
+                                Margin="0,0,0,15"/>
+                    </VerticalStackLayout>
+
+                    <Frame>
+                        <VerticalStackLayout>
+                            <Label Text="Período da Estadia"
+                                   TextTransform="Uppercase"
+                                   FontAttributes="Bold"/>
+
+                            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*">
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                       Text="Check-in: " />
+
+                                <DatePicker Grid.Row="0" Grid.Column="1"
+                                            x:Name="dtpck_checkin"
+                                            DateSelected="dtpck_checkin_DateSelected"
+                                            Format="dd/MM/yyyy" 
+                                            TextColor="SandyBrown"
+                                            HorizontalOptions="FillAndExpand"/>
+
+                                <Label Grid.Row="1" Grid.Column="0"
+                                       Text="Check-out: " />
+
+                                <DatePicker Grid.Row="1" Grid.Column="1"
+                                            x:Name="dtpck_checkout"
+                                            Format="dd/MM/yyyy" 
+                                            TextColor="SandyBrown" />
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Button Text="Avançar" Clicked="Button_Clicked"
+                            TextTransform="Uppercase" />
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Sobre"  Clicked="Button_Clicked_Sobre"
+                    TextTransform="Uppercase"
+                    TextColor="White"
+                    BackgroundColor="Transparent" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

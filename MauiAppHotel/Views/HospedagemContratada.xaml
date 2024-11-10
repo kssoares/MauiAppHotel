@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.HospedagemContratada"
+             Title="HospedagemContratada"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="DimGray">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Image Source="hotelcentralpark.jpg"
+                   WidthRequest="400"
+                   Aspect="AspectFit" />
+        
+            <Label Text="Suíte Super Luxo"
+                   FontSize="30"
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,25,0,0"/>
+
+            <Frame Margin="20,15,20,15">
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *">
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Quantidade Adultos: " />
+                
+                    <Label Grid.Row="0" Grid.Column="1"
+                           Text=" 2"
+                           TextColor="SandyBrown" />
+                
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Quantidade Crianças: " />
+                
+                    <Label Grid.Row="1" Grid.Column="1"
+                           Text=" 2"
+                           TextColor="SandyBrown" />
+                </Grid>
+            </Frame>
+
+            <Frame Margin="20,0,20,0">
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Check-in: " />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Check-out: " />
+                    <Label Grid.Row="0" Grid.Column="2" Text="Estadia: " />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="27/05/2024" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="30/05/2024" />
+                    <Label Grid.Row="1" Grid.Column="2" Text=" 3"
+                           TextColor="SandyBrown"
+                           HorizontalTextAlignment="Center"/>
+                </Grid>
+            </Frame>
+
+            <Frame Margin="20,15,20,25">
+                <HorizontalStackLayout>
+                    <Label Text="Valor Total: " />
+                    
+                    <Label Text=" R$ 750,00"
+                           TextColor="SandyBrown" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Button Text="Voltar" Clicked="Button_Clicked"
+                    TextTransform="Uppercase" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
